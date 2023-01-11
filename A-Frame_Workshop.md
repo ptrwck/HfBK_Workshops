@@ -6,7 +6,7 @@ logo:     A-Frame_logo.png
 language: de
 narrator: Deutsch Female
 comment:  Digitale Räume in VR mit A-Frame 
-mode:     Textbook
+mode:     presentation, textbook
 dark:     true
 date:     01/11/2023
 @classroom: disable
