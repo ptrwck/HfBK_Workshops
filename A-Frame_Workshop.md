@@ -245,10 +245,9 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 Das Box-Primitiv erzeugt Formen wie Kisten, Würfel oder Wände.
 
 ```html
-<a-box color="tomato" depth="2" height="4" width="0.5"></a-box>
+<a-box width="0.5" height="2" depth="1" position="-1 1 -4" color="red"></a-box>
+<a-box width="1" height="0.5" depth="2" position="1 1 -4" color="green" wireframe="true" wireframe-linewidth="2"></a-box>
 ```
-
-https://aframe.io/docs/1.4.0/primitives/a-box.html
 
 ---
 
