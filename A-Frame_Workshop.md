@@ -68,9 +68,7 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ---
 
-### Aufbau von HTML-Elementen
-
-#### Tag
+**Tags**
 
 ```html
 <tag></tag>
@@ -82,7 +80,7 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ---
 
-#### Attribute
+**Attribute**
 
 ```html
 <tag attribute></tag>
@@ -96,7 +94,7 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ---
 
-#### verschachtelte Elemente
+**verschachtelte Elemente**
 
 ```html
 <tag attribute="value">
@@ -109,7 +107,7 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ---
 
-#### Kommentare
+**Kommentare**
 
 ```html
 <tag attribute="value">
@@ -122,7 +120,7 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ---
 
-#### Syntax
+**Syntax**
 
 ```html
 <tag attribute="value"></tag>
@@ -134,7 +132,7 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ---
 
-#### Aufbau der HTML-Seite
+**Aufbau der HTML-Seite**
 
 ```html
 <!DOCTYPE html>
@@ -178,7 +176,7 @@ Das code-highlighting erleichtert uns das unterscheiden der einzelnen Bestandtei
 
 ---
 
-### Script
+**Script**
 
 ```html
   <head>  
@@ -191,13 +189,14 @@ Das im Head verlinkte Java-Script ist das, was die Szene funktionieren lässt.
 Es ist ein Programmcode, der die nachfolgend angegebene Szene interpretiert, darstellt und die Bedienung auf unterschiedlichen Geräten steuert.
 
 Der Programmcode kann angesehen werden durch direkten Aufruf der URL im Browser:
+
 - Datensparsam minimierte Variante: https://aframe.io/releases/latest/aframe.min.js
 - Vollständige und gut lesbare Variante: https://aframe.io/releases/latest/aframe.js
 - Es gibt verschiedene Versionen des Scripts. Anstatt von *latest* steht oft auch eine bestimmte Versionsnummer, zum Beispiel 1.4.0
 
 ---
 
-### Szene
+**Szene**
 
 ```html
 <a-scene>  
@@ -235,11 +234,11 @@ Jedes **Element** *a-box*, *a-sphere*, *a-cylinder* etc. beschreibt ein einzelne
 > verändere die Attribute der Elemente um zu sehen, was passiert
 
 
-# Szene aufbauen
+# 2 Szene aufbauen
 
 ## A-Frame Primitives
 
-### Box
+**Box**
 
 Das Box-Primitiv erzeugt Formen wie Kisten, Würfel oder Wände.
 
@@ -251,7 +250,7 @@ https://aframe.io/docs/1.4.0/primitives/a-box.html
 
 ---
 
-### Zylinder
+**Zylinder**
 
 Das Zylinderprimitiv wird zur Erstellung von Rohren und gekrümmten Flächen verwendet.
 
@@ -263,7 +262,7 @@ https://aframe.io/docs/1.4.0/primitives/a-cylinder.html
 
 ---
 
-### Fläche
+**Fläche**
 
 Das Flächenprimitiv erzeugt ebene Flächen
 
@@ -275,7 +274,7 @@ https://aframe.io/docs/1.4.0/primitives/a-plane.html
 
 ---
 
-### Kugel
+**Kugel**
 
 Das Kugelprimitiv erzeugt eine Kugel- oder Polyederform.
 
@@ -287,7 +286,7 @@ https://aframe.io/docs/1.4.0/primitives/a-sphere.html
 
 ---
 
-### Bild
+**Bild**
 
 Das Bildprimitiv zeigt ein Bild auf einer ebenen Fläche.
 
@@ -303,7 +302,7 @@ https://aframe.io/docs/1.4.0/primitives/a-image.html
 
 ---
 
-### Text
+**Text**
 
 Fügt einen Text hinzu.
 
@@ -315,39 +314,37 @@ https://aframe.io/docs/1.4.0/primitives/a-text.html
 
 ---
 
-### Sky
+**Sky**
 
-Das Himmelprimitiv fügt einer Szene eine Hintergrundfarbe oder ein 360°-Bild hinzu. Ein Himmel ist eine große Kugel, deren Innenseite eine Farbe oder Textur zugewiesen ist. Siehe dazu [[Environment - Sky]]
+Das Himmelprimitiv fügt einer Szene eine Hintergrundfarbe oder ein 360°-Bild hinzu. Ein Himmel ist eine große Kugel, deren Innenseite eine Farbe oder Textur zugewiesen ist.
 
 ``` html
 <a-sky color="#6EBAA7"></a-sky> <!-- Hintergrundfarbe -->
 <a-sky src="sky.jpg"></a-sky> <!-- Hintergrundbild -->
 ```
 
-https://aframe.io/docs/1.4.0/primitives/a-sky.html
+Hintergrundbilder lassen sich zu Beispiel auf folgenden Seiten herunterladen https://polyhaven.com/hdris (kostenfrei, CC0-Lizenz). Dort ist das 8K Tonemapped JPG zu nutzen. Für A-Frame sollte dieses aber verkleinert (auf ca. 50%) und komprimiert werden. Möglich ist dies lokal mit IrfanView oder Photoshop sowie online mit [Photopea](https://www.photopea.com/).
 
 ---
 
-### Kamera
+**Kamera**
 
-Wenn nicht explizit angegeben, wird eine Standardkamera wie unten angegeben in die Szene eingesetzt.
-A camera is situated by default at the average height of human eye level (1.6 meters). When used with controls that receive rotation or position (e.g. from a VR device) this position will be overridden.
-
-
+Wenn nicht explizit angegeben, wird eine Standardkamera wie unten angegeben in die Szene eingesetzt.  
+Eine Kamera befindet sich standardmäßig auf der durchschnittlichen Höhe der menschlichen Augenhöhe (1,6 Meter). Bei der Verwendung mit Steuerelementen, die eine Drehung oder Position erhalten (z. B. von einem VR-Gerät), wird diese Position außer Kraft gesetzt.
 
 ```html
 <a-camera position="0 1.6 0"></a-camera>
 ```
 
 - Auswahl Attribute (mit Standardangaben)
+
 	- Brennweite: fov="80"
 	- Mausinteraktion: reverse-mouse-drag="true"
 
-https://aframe.io/docs/1.4.0/primitives/a-camera.html
 
 ---
 
-### Weiteres
+**Weiteres**
 
 Weitere Grundobjekte finden sich in der offiziellen Dokumentation im seitlichen Menu, links ganz unten.
 
@@ -372,7 +369,7 @@ Ausführliche Informationen dazu unter
 
 ---
 
-### Tipp: Gruppierungen
+**Tipp: Gruppierungen**
 
 Entities können auch genutzt werden, um andere Objekte zu gruppieren. So lassen sich mehrere Objekte gemeinsam positionieren, z.B.:
 
@@ -384,7 +381,7 @@ Entities können auch genutzt werden, um andere Objekte zu gruppieren. So lassen
 </a-entity>
 ```
 
- Vergleichbar ist dies in Blender mit der Nutzung eines *empty* als parent für andere Objekte.
+Vergleichbar ist dies in Blender mit der Nutzung eines *empty* als parent für andere Objekte.
  
 ---
 
