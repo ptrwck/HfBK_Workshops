@@ -1,7 +1,7 @@
 <!--
 author:   Peter Wackernagel, Hochschule für Bildende Künste Dresden
 email:    wackernagel@hfbk-dresden.de
-version:  0.0.1
+version:  0.0.2
 logo:     A-Frame_logo.png
 language: de
 narrator: Deutsch Female
