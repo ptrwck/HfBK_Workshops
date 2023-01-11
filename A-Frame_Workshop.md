@@ -240,9 +240,9 @@ Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu be
 
 ## A-Frame Primitives
 
-**Box**
+**<a-box>**
 
-Das Box-Primitiv erzeugt Formen wie Kisten, Würfel oder Wände.
+The box primitive creates shapes such as boxes, cubes, or walls.
 
 ```html
 <a-box width="0.5" height="2" depth="1" position="-1 1 -4" color="red"></a-box>
@@ -251,9 +251,9 @@ Das Box-Primitiv erzeugt Formen wie Kisten, Würfel oder Wände.
 
 ---
 
-**Zylinder**
+**<a-cylinder>**
 
-Das Zylinderprimitiv wird zur Erstellung von Rohren und gekrümmten Flächen verwendet.
+The cylinder primitive is used to create tubes and curved surfaces.
 
 ```html
 <a-cylinder color="crimson" height="3" radius="1.5"></a-cylinder>
