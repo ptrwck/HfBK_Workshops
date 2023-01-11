@@ -13,13 +13,13 @@ date:     01/11/2023
 @sharing: false
 -->
 
-# Einführung
+# 1 Einführung
 
 [A-Frame](https://aframe.io/) ist ein Open-Source-Projekt, mit dem Sie VR auf regulärem HTML aufbauen können. Sie können also ein WebXR-Erlebnis genauso einfach erstellen wie eine Webseite, indem Sie einfach ein Skript und Markup in Ihre Seite einfügen. Mit A-Frame können Sie plattformübergreifende VR-Anwendungen erstellen, auf die Benutzer mit verschiedenen Geräten zugreifen können.
 
 ---
 
-## A-Frame Beispiele
+**A-Frame Beispiele**
 
 Beispielanwendungen auf der A-Frame-Homepage: [https://aframe.io/](https://aframe.io/)
 
@@ -33,29 +33,6 @@ Die Navigation in den Szenen erfolgt
 - Der Button **VR** rechts in der Ecke setzt die Szene in Vollbild beziehungsweise die VR-Ansicht.
 
 Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
-
----
-
-## Code Hosting
-
-Damit AFrame im Browser läuft wird eine Server-Umgebung benötigt. Es ist zum Beginnen das Einfachste, die Code-Hosting-Plattform Glitch.com zu nutzen, um ein eigenes Projekt zu entwickeln. Dort finden sich auch zahlreiche Projekte, auf denen aufgebaut werden kann. 
-
-Vorteile von Code-Hosting:
-
-- sofortige Bereitstellung online, es ist kein eigenes Hosting nötig
-- volle Funktion dynamischer Scripts
-
---- 
-
-## Starter Template
-
-Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu beginnen: [https://glitch.com/~aframe](https://glitch.com/~aframe)
-
-![Screenshot Starter Template](Starter-Template.png)
-
-- Nutze **Visit**, um die Szene in einem neuen Fenster darzustellen.
-- Nutze **View Source**, um den HTML-Quelltext anzusehen.
-- Nutze **Remix your own** um ein eigenes Projekt auf dieser Basis zu beginnen.
 
 ---
 
@@ -230,7 +207,32 @@ Jedes **Element** *a-box*, *a-sphere*, *a-cylinder* etc. beschreibt ein einzelne
 
 ## Übung
 
-> Beginne ein eigenes Projekt durch Remix des [A-Frame Starter Templates](https://glitch.com/~aframe) auf Glitch.
+---
+
+**Code Hosting**
+
+Damit AFrame im Browser läuft wird eine Server-Umgebung benötigt. Es ist zum Beginnen das Einfachste, die Code-Hosting-Plattform Glitch.com zu nutzen, um ein eigenes Projekt zu entwickeln. Dort finden sich auch zahlreiche Projekte, auf denen aufgebaut werden kann. 
+
+Vorteile von Code-Hosting:
+
+- sofortige Bereitstellung online, es ist kein eigenes Hosting nötig
+- volle Funktion dynamischer Scripts
+
+--- 
+
+**Starter Template**
+
+Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu beginnen: [https://glitch.com/~aframe](https://glitch.com/~aframe)
+
+![Screenshot Starter Template](Starter-Template.png)
+
+- Nutze **Visit**, um die Szene in einem neuen Fenster darzustellen.
+- Nutze **View Source**, um den HTML-Quelltext anzusehen.
+- Nutze **Remix your own** um ein eigenes Projekt auf dieser Basis zu beginnen.
+
+---
+
+> Beginne ein eigenes Projekt auf Glitch.
 > verändere die Attribute der Elemente um zu sehen, was passiert
 
 
