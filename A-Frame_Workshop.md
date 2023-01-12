@@ -3,7 +3,7 @@ author:   Peter Wackernagel, Hochschule für Bildende Künste Dresden
 email:    wackernagel@hfbk-dresden.de
 version:  0.0.3
 logo:     A-Frame_logo.png
-language: de
+language: en
 narrator: English Female
 comment:  Digital spaces in VR with A-Frame
 mode:     textbook
@@ -253,7 +253,7 @@ The box primitive creates shapes such as boxes, cubes, or walls.
 The cylinder primitive is used to create tubes and curved surfaces.
 
 ```html
-<a-cylinder color="crimson" height="3" radius="1.5"></a-cylinder>
+<a-cylinder color="crimson" height="3" radius="1.5" position="0 1 -5"></a-cylinder>
 ```
 
 ---
@@ -263,7 +263,8 @@ The cylinder primitive is used to create tubes and curved surfaces.
 The plane primitive creates flat surfaces.
 
 ```html
-<a-plane color="#CCC" height="20" width="20"></a-plane>
+<a-plane position="0 1 -4" rotation="0 45 0" width="4" height="4" color="#7BC8A4"></a-plane>
+<a-plane color="grey" height="20" width="20" position="0 0 -10" rotation="-90 0 0"></a-plane> <!-- Ground plane -->
 ```
 
 ---
@@ -273,7 +274,7 @@ The plane primitive creates flat surfaces.
 The sphere primitive creates a spherical or polyhedron shapes.
 
 ```html
-<a-sphere color="yellow" radius="5" segments-height="18" segments-width="36"></a-sphere>
+<a-sphere color="yellow" radius="1" position="0 1 -5"></a-sphere>
 ```
 
 ---
@@ -283,7 +284,7 @@ The sphere primitive creates a spherical or polyhedron shapes.
 Adds a text.
 
 ```html
-<a-text value="Hello, World!" height="0.5" align="left" font="Times New Roman" opacity="0.5" color="blue"></a-text>
+<a-text value="Hello, World!" color="black" position="0 1 -3"></a-text>
 ```
 
 ---
@@ -293,7 +294,7 @@ Adds a text.
 The image primitive shows an image on a flat plane.
 
 ```html
-<a-image src="image.jpg" width="3" height="1.5"></a-image>
+<a-image src="image.jpg" width="3" height="2" position="0 1 -5"></a-image>
 ```
 
 - mages can be uploaded on glitch into the assets-folder. Copy their URL from there and paste it into the src-attribute of the element.
