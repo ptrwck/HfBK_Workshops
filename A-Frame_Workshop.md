@@ -74,13 +74,14 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 **verschachtelte Elemente**
 
 ```html
-<tag attribute="value">
+<tag1 attribute="value">
 	<tag2 attribute="value"></tag2>
-</tag>
+	<tag3 attribute="value"></tag3>
+</tag1>
 ```
 
-- Elemente können ineinander verschachtelt werden.
-- Das weitere Element wird dabei zwischen opening-tag und closing-tag gesetzt.
+- Elements can be nested and placed between the opening-tag and the closing-tag of the outer element..
+- This way, tag1 works like a container which groups the nested tags together.
 
 ---
 
@@ -88,7 +89,7 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 
 ```html
 <tag attribute="value">
-	<tag2 attribute="value"></tag2> <!-- hier steht ein Kommentar -->
+	<tag2 attribute="value"></tag2> <!-- this comment will not be interpreted by the browser -->
 </tag>
 ```
 
@@ -185,23 +186,25 @@ Der Programmcode kann angesehen werden durch direkten Aufruf der URL im Browser:
 </a-scene>  
 ```
 
-Die A-frame-Szene wird durch den Tag *a-scene* initialisiert. Die Szenenobjekte befinden sich innerhalb dieses Tags.
-
-Alle zu A-Frame gehörenden Tags haben ein vorangestelltes *a-* um sie von Standard-HTML-Tags zu unterscheiden.
+- Die A-frame-Szene wird durch den Tag *a-scene* initialisiert. Die Szenenobjekte befinden sich innerhalb dieses Tags.
+- Alle zu A-Frame gehörenden Tags haben ein vorangestelltes *a-* um sie von Standard-HTML-Tags zu unterscheiden.
 
 ---
 
 Jedes **Element** *a-box*, *a-sphere*, *a-cylinder* etc. beschreibt ein einzelnes **Objekt** innerhalb der Szene mit folgenden Attributen:
 
 - position = x y z = Breite Höhe Tiefe
+
 	- Zahlen getrennt durch Leerzeichen, Angaben in Metern jedoch ohne Angabe der Einheit
 	- Tiefe z: -z bewegt von der Kamera weg. Positive Werte befinden sich hinter der Kamera
+
 - rotation: Angaben wie bei position
 - radius, width, height: Angaben abhängig von Objekttyp (Zylinder, Fläche)
 - color: hexadezimale Angabe: Anteile Rot Grün und Blau:
+
 	- Hex Colors: https://www.w3schools.com/colors/colors_hexadecimal.asp
 	- color Picker: https://www.w3schools.com/colors/colors_picker.asp
-	- Auch Farbnamen sind möglich: https://www.w3schools.com/colors/colors_names.asp
+	- color names are also possible: https://www.w3schools.com/colors/colors_names.asp
 
 ---
 
@@ -222,23 +225,19 @@ Vorteile von Code-Hosting:
 
 **Starter Template**
 
-Wir nutzen das A-Frame Starter-Template auf Glitch, um ein eigenes Projekt zu beginnen: [https://glitch.com/~aframe](https://glitch.com/~aframe)
+We'll use the A-Frame Starter-Template on glitch.com: [https://glitch.com/~aframe](https://glitch.com/~aframe)
 
 ![Screenshot Starter Template](Starter-Template.png)
 
-- Nutze **Visit**, um die Szene in einem neuen Fenster darzustellen.
-- Nutze **View Source**, um den HTML-Quelltext anzusehen.
-- Nutze **Remix your own** um ein eigenes Projekt auf dieser Basis zu beginnen.
-
----
-
-> Beginne ein eigenes Projekt auf Glitch.
-> verändere die Attribute der Elemente um zu sehen, was passiert
+> Hit **Remix your own** to start your own project based on this project.
+> Play around with this scene to see what will happen.
 
 
 # 2 Szene aufbauen
 
 ## A-Frame Primitives
+
+A-Frame provides a handful of elements such as <a-box> or <a-sky> called primitives that wrap the entity-component pattern to make it appealing for beginners. These are some examples with additional attributes:
 
 **<a-box>**
 
@@ -259,97 +258,70 @@ The cylinder primitive is used to create tubes and curved surfaces.
 <a-cylinder color="crimson" height="3" radius="1.5"></a-cylinder>
 ```
 
-https://aframe.io/docs/1.4.0/primitives/a-cylinder.html
-
 ---
 
-**Fläche**
+**<a-plane> **
 
-Das Flächenprimitiv erzeugt ebene Flächen
+The plane primitive creates flat surfaces.
 
 ```html
 <a-plane color="#CCC" height="20" width="20"></a-plane>
 ```
 
-https://aframe.io/docs/1.4.0/primitives/a-plane.html
-
 ---
 
-**Kugel**
+**<a-sphere>**
 
-Das Kugelprimitiv erzeugt eine Kugel- oder Polyederform.
+The sphere primitive creates a spherical or polyhedron shapes.
 
 ```html
-<a-sphere color="yellow" radius="5"></a-sphere>
+<a-sphere color="yellow" radius="5" segments-height="18" segments-width="36"></a-sphere>
 ```
-
-https://aframe.io/docs/1.4.0/primitives/a-sphere.html
 
 ---
 
-**Bild**
+**<a-text>**
 
-Das Bildprimitiv zeigt ein Bild auf einer ebenen Fläche.
+Adds a text.
+
+```html
+<a-text value="Hello, World!" height="0.5" align="left" font="Times New Roman" opacity="0.5" color="blue"></a-text>
+```
+
+---
+
+**<a-image>**
+
+The image primitive shows an image on a flat plane.
 
 ```html
 <a-image src="image.jpg" width="3" height="1.5"></a-image>
 ```
 
-Die Bildgröße ist in Metern und sollte dem Seitenverhältnis des Bildes entsprechen. Ohne Angabe wird es als Quadrat mit 1 x 1 m groß dargestellt.
-
-Alle Bilder, die sich im Internet einfach aufrufen lassen, können mit ihrer URL adressiert werden. Eigene Bilder können auf glitch hochgeladen und von dort verlinkt werden.
-
-https://aframe.io/docs/1.4.0/primitives/a-image.html
+- mages can be uploaded on glitch into the assets-folder. Copy their URL from there and paste it into the src-attribute of the element.
+- Ensuring that the image is not distorted by stretching requires us to appropriately set the width and height preserving the original aspect ratio of the image. This properties are set in meters, don’t confuse with pixels.
 
 ---
 
-**Text**
+**<a-sky>**
 
-Fügt einen Text hinzu.
-
-```html
-<a-text value="Hello, World!" height="0.5"></a-text>
-```
-
-https://aframe.io/docs/1.4.0/primitives/a-text.html
-
----
-
-**Sky**
-
-Das Himmelprimitiv fügt einer Szene eine Hintergrundfarbe oder ein 360°-Bild hinzu. Ein Himmel ist eine große Kugel, deren Innenseite eine Farbe oder Textur zugewiesen ist.
+The sky primitive adds a background color or 360° image to a scene. A sky is a large sphere with a color or texture mapped to the inside.
 
 ``` html
-<a-sky color="#6EBAA7"></a-sky> <!-- Hintergrundfarbe -->
-<a-sky src="sky.jpg"></a-sky> <!-- Hintergrundbild -->
+<a-sky color="#6EBAA7"></a-sky> <!-- background color -->
+<a-sky src="sky.jpg"></a-sky> <!-- equirectangular background-image -->
 ```
 
-Hintergrundbilder lassen sich zu Beispiel auf folgenden Seiten herunterladen https://polyhaven.com/hdris (kostenfrei, CC0-Lizenz). Dort ist das 8K Tonemapped JPG zu nutzen. Für A-Frame sollte dieses aber verkleinert (auf ca. 50%) und komprimiert werden. Möglich ist dies lokal mit IrfanView oder Photoshop sowie online mit [Photopea](https://www.photopea.com/).
-
----
-
-**Kamera**
-
-Wenn nicht explizit angegeben, wird eine Standardkamera wie unten angegeben in die Szene eingesetzt.  
-Eine Kamera befindet sich standardmäßig auf der durchschnittlichen Höhe der menschlichen Augenhöhe (1,6 Meter). Bei der Verwendung mit Steuerelementen, die eine Drehung oder Position erhalten (z. B. von einem VR-Gerät), wird diese Position außer Kraft gesetzt.
-
-```html
-<a-camera position="0 1.6 0"></a-camera>
-```
-
-- Auswahl Attribute (mit Standardangaben)
-
-	- Brennweite: fov="80"
-	- Mausinteraktion: reverse-mouse-drag="true"
-
+- You can download Sky-Images here: https://polyhaven.com/hdris ... Use the 8K Tonemapped-JPG from the hamburger-menu on the upper right.
+- To use the image with A-Frame on the web, you should downscale (4K: 4096px width is enough) and compress it again (JPG,medium compression, ca. 75%). You can do this locally with IrfanView or Photoshop and online using [Photopea](https://www.photopea.com/).
 
 ---
 
 **Weiteres**
 
-Weitere Grundobjekte finden sich in der offiziellen Dokumentation im seitlichen Menu, links ganz unten.
+You can find every primitive that A-Frame provides out of the box at the bottom of the documentation navigation sidebar: https://aframe.io/docs/1.4.0/primitives/a-box.html
 
-Hinweis zu Audio- und Videodateien: Auch diese lassen sich in A-Frame einbetten, allerdings sind hier häufig weitere Schritte nötig, damit sie korrekt abgespielt werden. Insbesondere bei Apple iOS gibt es Hürden für ein problemloses Abspielen.
+Developers can create their own primitives as well.
 
 ---
 
