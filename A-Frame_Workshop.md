@@ -1,38 +1,38 @@
 <!--
 author:   Peter Wackernagel, Hochschule für Bildende Künste Dresden
 email:    wackernagel@hfbk-dresden.de
-version:  0.0.2
+version:  0.0.3
 logo:     A-Frame_logo.png
 language: de
-narrator: Deutsch Female
-comment:  Digitale Räume in VR mit A-Frame 
-mode:     presentation, textbook
+narrator: English Female
+comment:  Digital spaces in VR with A-Frame
+mode:     textbook
 dark:     true
-date:     01/11/2023
+date:     01/12/2023
 @classroom: disable
-@sharing: false
+@sharing: true
 -->
 
-# 1 Einführung
+# 1 Introduction
 
-[A-Frame](https://aframe.io/) ist ein Open-Source-Projekt, mit dem Sie VR auf regulärem HTML aufbauen können. Sie können also ein WebXR-Erlebnis genauso einfach erstellen wie eine Webseite, indem Sie einfach ein Skript und Markup in Ihre Seite einfügen. Mit A-Frame können Sie plattformübergreifende VR-Anwendungen erstellen, auf die Benutzer mit verschiedenen Geräten zugreifen können.
+[A-Frame](https://aframe.io/docs/1.2.0/introduction/) is an open source project that allows you to build VR on top of regular HTML, so you can create a WebXR experience just as easily as you can make a web page, simply by including a script and markup in your page. With A-Frame, you can create cross-platform VR apps that users across multiple device types can access.
 
 ---
 
-**A-Frame Beispiele**
+**A-Frame Samples**
 
-Beispielanwendungen auf der A-Frame-Homepage: [https://aframe.io/](https://aframe.io/)
+Sample applications on the A-Frame home page: [https://aframe.io/](https://aframe.io/)
 
 ![Screenshot](AFrame_Website.png)
 
-Die Navigation in den Szenen erfolgt
+Navigation in the scenes is done
 
-- auf **Desktop** mit den Pfeiltasten oder WASD (sofern aktiviert)
-- auf **mobilen Geräten** mit Fingergesten
-- auf **VR-Headsets** durch aktive Körperbewegung.
-- Der Button **VR** rechts in der Ecke setzt die Szene in Vollbild beziehungsweise die VR-Ansicht.
+- on **desktop** with the arrow keys or WASD (if enabled)
+- on **mobile devices** with finger gestures
+- on **VR headsets** by active body movement.
+- The **VR** button in the right corner puts the scene in full screen or VR view.
 
-Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
+More examples: [glitch.com/webxr](https://glitch.com/webxr)
 
 ---
 
@@ -40,8 +40,8 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 
 ![Screenshot Starter Template Code](AFrame_Starter-Template-Source.png)
 
-- HTML (Hyper Text markup Language) ist die Sprache um Webseiten zu beschreiben.
-- A-Frame nutzt diese Sprache um die Objekte der Szene zu beschreiben
+- HTML (Hyper Text markup Language) is the language used to describe web pages.
+- A-Frame uses this language to describe the objects of the scene
 
 ---
 
@@ -51,13 +51,13 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 <tag></tag>
 ```
 
-- Ein HTML-Element besteht aus **Tags** gebildet. Es wird immer aus einem opening-tag und einem closing-tag gebildet.
-- Tags können unterschiedliche Namen und damit auch verschiedene Funktionen haben.
-- tags müssen von spitzen Klammern umgeben werden, das closing-tag hat einen vorangestellten Schrägstrich
+- An HTML element consists of **tags**. It is always formed from an opening-tag and a closing-tag.
+- Tags can have different names and thus different functions.
+- tags must be surrounded by angle brackets, the closing-tag has a preceding slash.
 
 ---
 
-**Attribute**
+**Attributes**
 
 ```html
 <tag attribute></tag>
@@ -65,13 +65,13 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 <tag attribute="value"></tag>
 ```
 
-- Im opening-tag kann es Attribute geben, die weitere Eigenschaften des Elements definieren.
-- Attribute haben oft auch einen Wert, der aus Zahlen, Farbwerten oder Textausdrücken  besteht.
-- Attribut und Wert sind ohne Leerzeichen mit dem Ist-Gleich-Zeichen verbunden, der Wert steht immer in Anführungszeichen.
+- In the opening-tag there can be attributes that define further properties of the element.
+- Attributes often also have a value, which consists of numbers, color values or text expressions.
+- Attribute and value are connected without spaces with the is-equal sign, the value is always in quotes.
 
 ---
 
-**verschachtelte Elemente**
+**Nested elements**
 
 ```html
 <tag1 attribute="value">
@@ -85,7 +85,7 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 
 ---
 
-**Kommentare**
+**Comments**
 
 ```html
 <tag attribute="value">
@@ -93,8 +93,8 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 </tag>
 ```
 
-- Es können Kommentare eingebaut werden mit Hinweisen zum Code.
-- Kommentare werden mit spitzer Klammer, Ausführungszeichen und 2 Minuszeichen eingerahmt wie oben.
+- Comments can be included with hints about the code.
+- Comments are framed with angle brackets, execution marks and 2 minus signs as above.
 
 ---
 
@@ -104,33 +104,33 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 <tag attribute="value"></tag>
 ```
 
-- die richtige Anwendung der Zeichen ist essentiell
-- fehlende Klammern oder Anführungszeichen oder zusätzliche Leerzeichen bei Attributen führen zu Fehlern in der Darstellung.
-- HTML für Webseiten nutzt noch Inhalt zwischen den Tags. Für AFrame ist dies unnötig.
+- the correct use of characters is essential
+- missing brackets or quotation marks or additional spaces in attributes lead to errors in the display.
+- HTML for web pages still uses content between tags. For A-Frame this is unnecessary.
 
 ---
 
-**Aufbau der HTML-Seite**
+**Structure of an HTML page**
 
 ```html
 <!DOCTYPE html>
 <html>  
-	<head>  <!-- unsichtbarer Teil mit Metadaten und Scripts -->  </head>  
-	<body>  <!-- sichtbarer Teil mit Texten, Medien, AFrame-Szene -->  </body>  
+	<head>  <!-- invisible part with metadata and scripts -->  </head>  
+	<body>  <!-- visible part with texts, media, A-Frame scene -->  </body>  
 </html>
 ```
 
-- Die Grundstruktur einer HTML-Seite ist immer einheitlich und unterteilt sich in die Bereiche:
+- The basic structure of an HTML page is standardized and is divided into the areas:
 
-	- Head: unsichtbarer Teil mit Metadaten und Scripts
-	- Body: sichtbarer Teil mit Texten, Medien, AFrame-Szene
+	- Head: invisible part with metadata and scripts.
+	- Body: visible part with texts, media, AFrame scene.
 
-- Leerzeilen können beliebig dazwischen gesetzt werden und erleichtern die Übersicht.
-- Es sollte kein Text außerhalb von Tags stehen, mit Ausnahme von Kommentaren.
+- Blank lines can be placed between them as desired and make it easier to keep track.
+- There should be no text outside of tags, except for comments.
 
 ---
 
-## A-Frame Basisszene
+## A-Frame Base scene
 
 ```html
 <!DOCTYPE html>
@@ -150,7 +150,7 @@ Weitere Beispiele: [glitch.com/webxr](https://glitch.com/webxr)
 </html>
 ```
 
-Das code-highlighting erleichtert uns das unterscheiden der einzelnen Bestandteile. Je nach verwendetem Programm kann es hier verschiedene Farben geben, die Unterteilung des Syntax (der Code-Sprache) in verschiedene Farben ist jedoch stets dieselbe.
+The code-highlighting makes it easier for us to distinguish the individual components. Depending on the program used, there can be different colors here, but the division of the syntax (the code language) into different colors is always the same.
 
 ---
 
@@ -162,19 +162,19 @@ Das code-highlighting erleichtert uns das unterscheiden der einzelnen Bestandtei
   </head>  
 ```
 
-Das im Head verlinkte Java-Script ist das, was die Szene funktionieren lässt.
+The Java script linked in the head is what makes the scene work. This is the actual A-Frame "program".
 
-Es ist ein Programmcode, der die nachfolgend angegebene Szene interpretiert, darstellt und die Bedienung auf unterschiedlichen Geräten steuert.
+It is a program code that interprets the scene specified in the body, displays it and controls its operation on different devices.
 
-Der Programmcode kann angesehen werden durch direkten Aufruf der URL im Browser:
+This program code can be viewed by calling the URL directly in the browser:
 
-- Datensparsam minimierte Variante: https://aframe.io/releases/latest/aframe.min.js
-- Vollständige und gut lesbare Variante: https://aframe.io/releases/latest/aframe.js
-- Es gibt verschiedene Versionen des Scripts. Anstatt von *latest* steht oft auch eine bestimmte Versionsnummer, zum Beispiel 1.4.0
+- Data saving minimized variant, poorly readable for humans: https://aframe.io/releases/latest/aframe.min.js
+- Structured, annotated and easy to read variant: https://aframe.io/releases/latest/aframe.js
+- There are different versions of the script. Instead of *latest* there is often a specific version number in the URL of the linked script, for example 1.4.0.
 
 ---
 
-**Szene**
+**Scene**
 
 ```html
 <a-scene>  
@@ -186,21 +186,21 @@ Der Programmcode kann angesehen werden durch direkten Aufruf der URL im Browser:
 </a-scene>  
 ```
 
-- Die A-frame-Szene wird durch den Tag *a-scene* initialisiert. Die Szenenobjekte befinden sich innerhalb dieses Tags.
-- Alle zu A-Frame gehörenden Tags haben ein vorangestelltes *a-* um sie von Standard-HTML-Tags zu unterscheiden.
+- The A-Frame scene is initialized by the *a-scene* tag. The scene objects are nested inside this tag.
+- All tags belonging to A-Frame have a prefix *a-* to distinguish them from standard HTML tags.
 
 ---
 
-Jedes **Element** *a-box*, *a-sphere*, *a-cylinder* etc. beschreibt ein einzelnes **Objekt** innerhalb der Szene mit folgenden Attributen:
+Each **element** *a-box*, *a-sphere*, *a-cylinder* etc. describes a single **object** within the scene with the following attributes:
 
-- position = x y z = Breite Höhe Tiefe
+- position = x y z = width height depth
 
-	- Zahlen getrennt durch Leerzeichen, Angaben in Metern jedoch ohne Angabe der Einheit
-	- Tiefe z: -z bewegt von der Kamera weg. Positive Werte befinden sich hinter der Kamera
+	- Numbers separated by blanks, in meters but without units
+	- Depth z: -z moves away from the camera. Positive values are behind the camera
 
-- rotation: Angaben wie bei position
-- radius, width, height: Angaben abhängig von Objekttyp (Zylinder, Fläche)
-- color: hexadezimale Angabe: Anteile Rot Grün und Blau:
+- rotation: data as for position
+- radius, width, height: data depending on object type (cylinder, surface)
+- color: hexadecimal specification: red, green and blue components:
 
 	- Hex Colors: https://www.w3schools.com/colors/colors_hexadecimal.asp
 	- color Picker: https://www.w3schools.com/colors/colors_picker.asp
@@ -208,18 +208,16 @@ Jedes **Element** *a-box*, *a-sphere*, *a-cylinder* etc. beschreibt ein einzelne
 
 ---
 
-## Übung
-
----
+## Practice
 
 **Code Hosting**
 
-Damit AFrame im Browser läuft wird eine Server-Umgebung benötigt. Es ist zum Beginnen das Einfachste, die Code-Hosting-Plattform Glitch.com zu nutzen, um ein eigenes Projekt zu entwickeln. Dort finden sich auch zahlreiche Projekte, auf denen aufgebaut werden kann. 
+A server environment is required for A-Frame to run in the browser. The easiest way to start is to use the code hosting platform Glitch.com to develop your own project. There you will also find numerous projects that can be built upon. 
 
-Vorteile von Code-Hosting:
+Advantages of code hosting:
 
-- sofortige Bereitstellung online, es ist kein eigenes Hosting nötig
-- volle Funktion dynamischer Scripts
+- immediate deployment online, no need to have your own hosting
+- full function of dynamic scripts
 
 --- 
 
@@ -233,7 +231,7 @@ We'll use the A-Frame Starter-Template on glitch.com: [https://glitch.com/~afram
 > Play around with this scene to see what will happen.
 
 
-# 2 Szene aufbauen
+# 2 Building the scene
 
 ## A-Frame Primitives
 
@@ -317,7 +315,7 @@ The sky primitive adds a background color or 360° image to a scene. A sky is a 
 
 ---
 
-**Weiteres**
+**More**
 
 You can find every primitive that A-Frame provides out of the box at the bottom of the documentation navigation sidebar: https://aframe.io/docs/1.4.0/primitives/a-box.html
 
@@ -327,8 +325,8 @@ Developers can create their own primitives as well.
 
 ## A-Frame Entities
 
-A-Frame Elemente können auf 2 Arten angegeben werden: als spezielles Primitive (z.B. a-box) oder als allgemeine entity (a-entity) zusammen mit einer Komponente.  
-Primitives (s.o.) sind Vereinfachungen für die Darstellung häufiger Objekte und verweisen innerhalb von A-Frame auf Entities.
+A-Frame elements can be specified in 2 ways: as a special primitive (e.g. a-box) or as a general entity (a-entity) together with components.  
+Primitives are simplifications for the representation of common objects and refer to entities within A-Frame.
 
 ```html
 <a-box color="red" width="3"></a-box>
@@ -336,15 +334,15 @@ Primitives (s.o.) sind Vereinfachungen für die Darstellung häufiger Objekte un
 <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity>
 ```
 
-Ausführliche Informationen dazu unter
+Detailed information is available at
 - https://aframe.io/docs/1.4.0/introduction/html-and-primitives.html und
 - https://aframe.io/docs/1.4.0/introduction/entity-component-system.html
 
 ---
 
-**Tipp: Gruppierungen**
+**Tip: making groups**
 
-Entities können auch genutzt werden, um andere Objekte zu gruppieren. So lassen sich mehrere Objekte gemeinsam positionieren, z.B.:
+Entities can also be used to group other objects. This allows several objects to be positioned together, e.g.:
 
 ```html
 <a-entity position="0 0 -5" rotation="0 45 0">
@@ -354,12 +352,12 @@ Entities können auch genutzt werden, um andere Objekte zu gruppieren. So lassen
 </a-entity>
 ```
 
-Vergleichbar ist dies in Blender mit der Nutzung eines *empty* als parent für andere Objekte.
+In Blender, this is comparable to using an *empty* as a parent for other objects.
  
 ---
 
-## Übung
+## Practice
 
-> Gestalte eine eigene Szene mit verschiedenen Objekten in A-Frame auf glitch.com
-> Besuche deine Szene auf verschiedenen Endgeräten, Mobil und VR-Headset.
+> Develop your scene with different objects.
+> Try your scene on different devices: desktop, mobile and VR.
 
