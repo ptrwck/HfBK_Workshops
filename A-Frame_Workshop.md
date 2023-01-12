@@ -237,9 +237,9 @@ We'll use the A-Frame Starter-Template on glitch.com: [https://glitch.com/~afram
 
 ## A-Frame Primitives
 
-A-Frame provides a handful of elements such as <a-box> or <a-sky> called primitives that wrap the entity-component pattern to make it appealing for beginners. These are some examples with additional attributes:
+A-Frame provides a handful of elements such as *a-box* or *a-sky* called primitives that wrap the entity-component pattern to make it appealing for beginners. These are some examples with additional attributes:
 
-**<a-box>**
+**a-box**
 
 The box primitive creates shapes such as boxes, cubes, or walls.
 
@@ -250,7 +250,7 @@ The box primitive creates shapes such as boxes, cubes, or walls.
 
 ---
 
-**<a-cylinder>**
+**a-cylinder**
 
 The cylinder primitive is used to create tubes and curved surfaces.
 
@@ -260,7 +260,7 @@ The cylinder primitive is used to create tubes and curved surfaces.
 
 ---
 
-**<a-plane> **
+**a-plane **
 
 The plane primitive creates flat surfaces.
 
@@ -270,7 +270,7 @@ The plane primitive creates flat surfaces.
 
 ---
 
-**<a-sphere>**
+**a-sphere**
 
 The sphere primitive creates a spherical or polyhedron shapes.
 
@@ -280,7 +280,7 @@ The sphere primitive creates a spherical or polyhedron shapes.
 
 ---
 
-**<a-text>**
+**a-text**
 
 Adds a text.
 
@@ -290,7 +290,7 @@ Adds a text.
 
 ---
 
-**<a-image>**
+**a-image**
 
 The image primitive shows an image on a flat plane.
 
@@ -303,7 +303,7 @@ The image primitive shows an image on a flat plane.
 
 ---
 
-**<a-sky>**
+**a-sky**
 
 The sky primitive adds a background color or 360° image to a scene. A sky is a large sphere with a color or texture mapped to the inside.
 
