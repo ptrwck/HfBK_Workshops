@@ -15,7 +15,7 @@ date:     01/12/2023
 
 # 1 Introduction
 
-[A-Frame](https://aframe.io/docs/1.2.0/introduction/) is an open source project that allows you to build VR on top of regular HTML, so you can create a WebXR experience just as easily as you can make a web page, simply by including a script and markup in your page. With A-Frame, you can create cross-platform VR apps that users across multiple device types can access.
+[A-Frame](https://aframe.io/docs/1.4.0/introduction/) is an open source project that allows you to build VR on top of regular HTML, so you can create a WebXR experience just as easily as you can make a web page, simply by including a script and markup in your page. With A-Frame, you can create cross-platform VR apps that users across multiple device types can access.
 
 ---
 
