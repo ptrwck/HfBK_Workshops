@@ -412,7 +412,7 @@ Loading Inline
 <a-entity gltf-model="url(/path/to/tree.gltf)"></a-entity>
 ```
 
-Loading with Asset Management is recommended, when using multiple or large files.
+Loading with Asset Management is recommended, when using multiple or large files. Check out this on details: https://aframe.io/docs/1.4.0/core/asset-management-system.html
 
 ```html
 <a-assets>  
