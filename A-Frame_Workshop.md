@@ -23,7 +23,7 @@ date:     01/12/2023
 
 Sample applications on the A-Frame home page: [https://aframe.io/](https://aframe.io/)
 
-![Screenshot](AFrame_Website.png)
+![Screenshot](HfBK_Workshops/AFrame_Website.png)
 
 Navigation in the scenes is done
 
@@ -38,7 +38,7 @@ More examples: [glitch.com/webxr](https://glitch.com/webxr)
 
 ## HTML-Code
 
-![Screenshot Starter Template Code](AFrame_Starter-Template-Source.png)
+![Screenshot Starter Template Code](HfBK_Workshops/AFrame_Starter-Template-Source.png)
 
 - HTML (Hyper Text markup Language) is the language used to describe web pages.
 - A-Frame uses this language to describe the objects of the scene
@@ -130,7 +130,9 @@ More examples: [glitch.com/webxr](https://glitch.com/webxr)
 
 ---
 
-## A-Frame Base scene
+## Hello WebVR!
+
+![Screenshot Starter Template](HfBK_Workshops/Starter-Template.png)
 
 ```html
 <!DOCTYPE html>
@@ -150,7 +152,7 @@ More examples: [glitch.com/webxr](https://glitch.com/webxr)
 </html>
 ```
 
-The code-highlighting makes it easier for us to distinguish the individual components. Depending on the program used, there can be different colors here, but the division of the syntax (the code language) into different colors is always the same.
+The code-highlighting makes it easier for us to distinguish the individual components.
 
 ---
 
@@ -191,7 +193,15 @@ This program code can be viewed by calling the URL directly in the browser:
 
 ---
 
-Each **element** *a-box*, *a-sphere*, *a-cylinder* etc. describes a single **object** within the scene with the following attributes:
+Each **element** *a-box*, *a-sphere*, *a-cylinder* etc. describes a single **object** within the scene.
+
+![Base scene with html-tags](https://user-images.githubusercontent.com/674727/52090525-79b04d80-2566-11e9-993f-7a8b19ca25b1.png)
+
+--- 
+
+The **properties** of each Object are attached as **attributes**.
+
+![Code with Elements highlighted](https://user-images.githubusercontent.com/6694476/27047689-94689672-4fc6-11e7-9cf5-828a508c6522.jpg)
 
 - position = x y z = width height depth
 
@@ -208,7 +218,7 @@ Each **element** *a-box*, *a-sphere*, *a-cylinder* etc. describes a single **obj
 
 ---
 
-## Practice
+## Practice: Get Started
 
 **Code Hosting**
 
@@ -225,17 +235,19 @@ Advantages of code hosting:
 
 We'll use the A-Frame Starter-Template on glitch.com: [https://glitch.com/~aframe](https://glitch.com/~aframe)
 
-![Screenshot Starter Template](Starter-Template.png)
+![Screenshot Starter Template](HfBK_Workshops/Starter-Template.png)
 
 > Hit **Remix your own** to start your own project based on this project.
 > Play around with this scene to see what will happen.
 
 
-# 2 Building the scene
+# 2 Objects
 
 ## A-Frame Primitives
 
 A-Frame provides a handful of elements such as *a-box* or *a-sky* called primitives that wrap the entity-component pattern to make it appealing for beginners. These are some examples with additional attributes:
+
+---
 
 **a-box**
 
@@ -258,7 +270,7 @@ The cylinder primitive is used to create tubes and curved surfaces.
 
 ---
 
-**a-plane **
+**a-plane**
 
 The plane primitive creates flat surfaces.
 
@@ -297,8 +309,8 @@ The image primitive shows an image on a flat plane.
 <a-image src="image.jpg" width="3" height="2" position="0 1 -5"></a-image>
 ```
 
-- mages can be uploaded on glitch into the assets-folder. Copy their URL from there and paste it into the src-attribute of the element.
-- Ensuring that the image is not distorted by stretching requires us to appropriately set the width and height preserving the original aspect ratio of the image. This properties are set in meters, don’t confuse with pixels.
+- mages can be uploaded on glitch into the **assets**-folder. Copy their URL from there and paste it into the src-attribute of the element.
+- Set the width and height preserving the original aspect ratio of the image to avoid distortions. This properties are set in meters, don’t confuse with pixels.
 
 ---
 
@@ -311,8 +323,7 @@ The sky primitive adds a background color or 360° image to a scene. A sky is a 
 <a-sky src="sky.jpg"></a-sky> <!-- equirectangular background-image -->
 ```
 
-- You can download Sky-Images here: https://polyhaven.com/hdris ... Use the 8K Tonemapped-JPG from the hamburger-menu on the upper right.
-- To use the image with A-Frame on the web, you should downscale (4K: 4096px width is enough) and compress it again (JPG,medium compression, ca. 75%). You can do this locally with IrfanView or Photoshop and online using [Photopea](https://www.photopea.com/).
+- You can download Sky-Images here: https://polyhaven.com/hdris ... Download the 8K Tonemapped-JPG from the menu on the upper right and [[2b Optimizing Media|optimize]] for web
 
 ---
 
@@ -335,7 +346,14 @@ Primitives are simplifications for the representation of common objects and refe
 <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity>
 ```
 
-Detailed information is available at
+Entities provide a more flexible way in creating Objects in A-Frame. 
+
+![composing an entity](https://cloud.githubusercontent.com/assets/674727/25463804/896c04c2-2aad-11e7-8015-2fc84118a01c.gif)
+
+See here on how to compose entities: https://aframe.io/docs/1.4.0/introduction/entity-component-system.html#ecs-in-a-frame
+
+Background-information on this is available at
+
 - https://aframe.io/docs/1.4.0/introduction/html-and-primitives.html und
 - https://aframe.io/docs/1.4.0/introduction/entity-component-system.html
 
@@ -357,8 +375,132 @@ In Blender, this is comparable to using an *empty* as a parent for other objects
  
 ---
 
-## Practice
+## Practice: Develop your scene
 
 > Develop your scene with different objects.
 > Try your scene on different devices: desktop, mobile and VR.
+
+
+# 3 Using 3D-Models
+
+[glTF](https://www.khronos.org/gltf) (GL Transmission Format) is an open project by Khronos providing a common, extensible format for 3D assets that is both efficient and highly interoperable with modern web technologies.
+
+The `gltf-model` component loads a 3D model using a glTF (`.gltf` or `.glb`) file.
+
+Note that glTF is a fairly new specification and adoption is still growing.
+
+In comparison to the older [OBJ](https://aframe.io/docs/1.4.0/components/obj-model.html) format, which supports only vertices, normals, texture coordinates, and basic materials, glTF provides a more powerful set of features. In addition to all of the above, glTF offers:
+
+-   Hierarchical objects
+-   Scene information (light sources, cameras)
+-   Skeletal structure and animation
+-   More robust materials and shaders
+
+For simple models with no animation, OBJ is nevertheless a common and reliable choice.
+
+Expect glTF models to work with A-Frame more reliably than other formats.
+
+---
+
+**Loading gLTF-Model**
+
+Load a glTF model by pointing to an asset that specifies the `src` for a glTF file.
+
+Loading Inline
+
+```html
+<a-entity gltf-model="url(/path/to/tree.gltf)"></a-entity>
+```
+
+Loading with Asset Management is recommended, when using multiple or large files.
+
+```html
+<a-assets>  
+	<a-asset-item id="tree" src="/path/to/tree.gltf"></a-asset-item>  
+</a-assets>  
+  
+<a-entity gltf-model="#tree"></a-entity>  
+```
+
+GlTF-Model loading: https://aframe.io/docs/1.4.0/components/gltf-model.html
+
+---
+
+## Textures
+
+When using textures in your materials, make sure to use a power of 2 texture. This is any texture with both dimensions as a power of 2: 256. 512, 1024 (*1K*), 2048 (*2k*), 4096 (*4K*)
+
+If your textures are ^2, then they will fit neatly into memory blocks and save memory space and load time.
+
+> - Prefer to use textures in a resolution as low as visually possible. 1K and lower is often sufficient, it is recommended not to use textures larger than 2K.
+> - Convert Textures to JPG or PNG. This can automatically be in the gLTF Blender Exporter.
+
+**A-Frame Scene Properties**
+
+We will need to enable color management in the A-Frame Scene settings for precisely matching colors from our textures. We will do this in the renderer component for the scene.
+
+```html
+<a-scene renderer="colorManagement: true;">
+	<!-- scene content -->
+</a-scene>
+```
+
+https://aframe.io/docs/1.4.0/components/renderer.html
+
+---
+
+
+## Animations
+
+If you want to use the animations from your glTF model, you can use the animation-mixer component from the [aframe-extras](https://github.com/donmccurdy/aframe-extras). 
+
+Place the additional link to the script in the head and add the animation-mixer component to the desired object. By default all animations are played in a loop.
+
+```html
+<head>
+	<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>  
+	<script src="https://unpkg.com/aframe-extras.animation-mixer@6.1.1/dist/aframe-extras.animation-mixer.js"></script>
+</script>
+
+</head>
+ 
+<!--- Scene and asset-elements --->
+<a-entity gltf-model="#animated-model" animation-mixer></a-entity>
+```
+
+Note: This might not work in the latest versions of A-Frame since aframe-extras are build additionally. We might need to adjust the versions of both scripts in the URL to match compatible versions as seen in the example above. Check compatibility here: https://github.com/c-frame/aframe-extras#usage-scripts
+
+---
+
+## Performance
+
+Scenes, that are build in Modeling and texturing tools such as Blender, will need to be optimized to be viewed realtime and on the web.
+
+Always keep an eye on 
+
+- Material Count
+- VRAM Usage
+- Light Count
+- Polycount
+- File Size
+
+Checking the scene statistics will help you to create optimized scenes.
+
+**Blender Scene Statistics**: Right-klick on the Version number in the lower right corner -> Scene Statistics
+
+**A-Frame Scene Statistics**: Add stats to the a-scene-element: 
+
+```html
+<a-scene stats></a-scene>
+```
+
+https://aframe.io/docs/1.4.0/components/stats.html
+
+---
+
+## Practice: Prepare in Blender
+
+- Build a simple scene in Blender with Textures and Animations.
+- Check this tutorial on how to optimize your scene https://hubs.mozilla.com/labs/how-to-optimize-your-scenes/
+- Export your Scene to GLTF/GLB and load into A-Frame
 
