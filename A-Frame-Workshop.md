@@ -569,19 +569,19 @@ A NavMesh is a 3D object that controls the movement space and is mostly invisibl
 
 You can create navmeshes in Blender out of a plane. Extrude and transform the edges so that the mesh covers the desired area on top of your scene objects. You can go up and down with this mesh, but keep it without any volume. 
 
-![navmesh.png](navmesh.png)
+![navmesh picture](navmesh.png)
 
 ---
 
 Note that the standard camera in A-Frame is at the world origin at a height of 1.6 m. Start your navmesh from there, or change the position of the camera (see code below).
 
-![navmesh-camera.png](navmesh-camera.png)
+![navmesh-camera Picture](navmesh-camera.png)
 
 ---
 
 Select the navmesh and export it. In the export dialogue, check *include -> selected objects*, to selectivly export individual meshes.
 
-![navmesh-export.png](navmesh-export.png)
+![navmesh-export picture](navmesh-export.png)
 
 ---
 
