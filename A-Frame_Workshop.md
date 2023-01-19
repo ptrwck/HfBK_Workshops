@@ -1,14 +1,14 @@
 <!--
 author:   Peter Wackernagel, Hochschule für Bildende Künste Dresden
 email:    wackernagel@hfbk-dresden.de
-version:  0.0.5
+version:  0.0.6
 logo:     A-Frame_logo.png
 language: en
 narrator: English Female
 comment:  Digital spaces in VR with A-Frame
 mode:     textbook
-dark:     true
-date:     01/12/2023
+dark:     false
+date:     19/12/2023
 @classroom: disable
 @sharing: true
 -->
@@ -23,7 +23,7 @@ date:     01/12/2023
 
 Sample applications on the A-Frame home page: [https://aframe.io/](https://aframe.io/)
 
-![Screenshot](HfBK_Workshops/AFrame_Website.png)
+![Screenshot](AFrame_Website.png)
 
 Navigation in the scenes is done
 
@@ -38,7 +38,7 @@ More examples: [glitch.com/webxr](https://glitch.com/webxr)
 
 ## HTML-Code
 
-![Screenshot Starter Template Code](HfBK_Workshops/AFrame_Starter-Template-Source.png)
+![Screenshot Starter Template Code](AFrame_Starter-Template-Source.png)
 
 - HTML (Hyper Text markup Language) is the language used to describe web pages.
 - A-Frame uses this language to describe the objects of the scene
@@ -130,15 +130,15 @@ More examples: [glitch.com/webxr](https://glitch.com/webxr)
 
 ---
 
-## Hello WebVR!
+## Starter Template
 
-![Screenshot Starter Template](HfBK_Workshops/Starter-Template.png)
+![Screenshot Starter Template](Starter-Template.png)
 
 ```html
 <!DOCTYPE html>
 <html>  
   <head>  
-    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>  
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>  
   </head>  
   <body>  
     <a-scene>  
@@ -160,7 +160,7 @@ The code-highlighting makes it easier for us to distinguish the individual compo
 
 ```html
   <head>  
-    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>  
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>  
   </head>  
 ```
 
@@ -172,7 +172,7 @@ This program code can be viewed by calling the URL directly in the browser:
 
 - Data saving minimized variant, poorly readable for humans: https://aframe.io/releases/latest/aframe.min.js
 - Structured, annotated and easy to read variant: https://aframe.io/releases/latest/aframe.js
-- There are different versions of the script. Instead of *latest* there is often a specific version number in the URL of the linked script, for example 1.4.0.
+- There are different versions of the script that you can see in the URL to the script.
 
 ---
 
@@ -218,7 +218,7 @@ The **properties** of each Object are attached as **attributes**.
 
 ---
 
-## Practice: Get Started
+## Start your Project
 
 **Code Hosting**
 
@@ -235,11 +235,12 @@ Advantages of code hosting:
 
 We'll use the A-Frame Starter-Template on glitch.com: [https://glitch.com/~aframe](https://glitch.com/~aframe)
 
-![Screenshot Starter Template](HfBK_Workshops/Starter-Template.png)
+![Screenshot Starter Template](Starter-Template.png)
 
 > Hit **Remix your own** to start your own project based on this project.
 > Play around with this scene to see what will happen.
 
+---
 
 # 2 Objects
 
@@ -337,7 +338,7 @@ Developers can create their own primitives as well.
 
 ## A-Frame Entities
 
-A-Frame elements can be specified in 2 ways: as a special primitive (e.g. a-box) or as a general entity (a-entity) together with components.  
+A-Frame elements can be specified in 2 ways: as a specialized primitive (e.g. a-box) or as a general entity (a-entity) together with components.  
 Primitives are simplifications for the representation of common objects and refer to entities within A-Frame.
 
 ```html
@@ -372,72 +373,38 @@ Entities can also be used to group other objects. This allows several objects to
 ```
 
 In Blender, this is comparable to using an *empty* as a parent for other objects.
- 
+
 ---
-
-## Practice: Develop your scene
-
-> Develop your scene with different objects.
-> Try your scene on different devices: desktop, mobile and VR.
-
 
 # 3 Using 3D-Models
 
-[glTF](https://www.khronos.org/gltf) (GL Transmission Format) is an open project by Khronos providing a common, extensible format for 3D assets that is both efficient and highly interoperable with modern web technologies.
+To use 3D-Models in A-Frame it is recommended to use the glTF Format. Even though it is possible to use other formats, glTF models work with A-Frame more reliably than other formats.
 
-The `gltf-model` component loads a 3D model using a glTF (`.gltf` or `.glb`) file.
+glTF files can save meshes, materials and shaders, animation and scene information. This is useful for A-Frame since we can create our entire scene directly in Blender, export it to glTF and load it into A-Frame.
 
-Note that glTF is a fairly new specification and adoption is still growing.
-
-In comparison to the older [OBJ](https://aframe.io/docs/1.4.0/components/obj-model.html) format, which supports only vertices, normals, texture coordinates, and basic materials, glTF provides a more powerful set of features. In addition to all of the above, glTF offers:
-
--   Hierarchical objects
--   Scene information (light sources, cameras)
--   Skeletal structure and animation
--   More robust materials and shaders
-
-For simple models with no animation, OBJ is nevertheless a common and reliable choice.
-
-Expect glTF models to work with A-Frame more reliably than other formats.
+> [glTF](https://www.khronos.org/gltf) (GL Transmission Format) is an open project by Khronos providing a common, extensible format for 3D assets that is both efficient and highly interoperable with modern web technologies.
 
 ---
 
-**Loading gLTF-Model**
+## Loading glTF-Model
 
-Load a glTF model by pointing to an asset that specifies the `src` for a glTF file.
-
-Loading Inline
+Load a glTF model by pointing to an asset that specifies the `src` for a glTF file. It is possible to use `.gltf` or `.glb` files. 
 
 ```html
-<a-entity gltf-model="url(/path/to/tree.gltf)"></a-entity>
+<!-- as primitive -->
+<a-gltf-model src="path/to/tree.gltf"></a-gltf-model>
+
+<!-- or alternatively as entity -->
+<a-entity gltf-model="/path/to/tree.gltf"></a-entity>
 ```
 
-Loading with Asset Management is recommended, when using multiple or large files. Check out this on details: https://aframe.io/docs/1.4.0/core/asset-management-system.html
-
-```html
-<a-assets>  
-	<a-asset-item id="tree" src="/path/to/tree.gltf"></a-asset-item>  
-</a-assets>  
-  
-<a-entity gltf-model="#tree"></a-entity>  
-```
-
-GlTF-Model loading: https://aframe.io/docs/1.4.0/components/gltf-model.html
+You can upload your file into the assets-folder of your project on glitch. Select it and copy the URL of your file and paste into the code.
 
 ---
 
-## Textures
+**Build-in Textures**
 
-When using textures in your materials, make sure to use a power of 2 texture. This is any texture with both dimensions as a power of 2: 256. 512, 1024 (*1K*), 2048 (*2k*), 4096 (*4K*)
-
-If your textures are ^2, then they will fit neatly into memory blocks and save memory space and load time.
-
-> - Prefer to use textures in a resolution as low as visually possible. 1K and lower is often sufficient, it is recommended not to use textures larger than 2K.
-> - Convert Textures to JPG or PNG. This can automatically be in the gLTF Blender Exporter.
-
-**A-Frame Scene Properties**
-
-We will need to enable color management in the A-Frame Scene settings for precisely matching colors from our textures. We will do this in the renderer component for the scene.
+If your glTF model uses textures you will need to enable color management in the A-Frame scene settings by adding `renderer="colorManagement: true;"` as attribute to `<a-scene>`
 
 ```html
 <a-scene renderer="colorManagement: true;">
@@ -445,62 +412,145 @@ We will need to enable color management in the A-Frame Scene settings for precis
 </a-scene>
 ```
 
-https://aframe.io/docs/1.4.0/components/renderer.html
+more on the renderer: https://aframe.io/docs/1.4.0/components/renderer.html
 
 ---
 
-
-## Animations
-
-If you want to use the animations from your glTF model, you can use the animation-mixer component from the [aframe-extras](https://github.com/donmccurdy/aframe-extras). 
-
-Place the additional link to the script in the head and add the animation-mixer component to the desired object. By default all animations are played in a loop.
+The code of your scene loading a glTF file with textures and setting the color management could look like this.
 
 ```html
-<head>
-	<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>  
-	<script src="https://unpkg.com/aframe-extras.animation-mixer@6.1.1/dist/aframe-extras.animation-mixer.js"></script>
-</script>
-
-</head>
- 
-<!--- Scene and asset-elements --->
-<a-entity gltf-model="#animated-model" animation-mixer></a-entity>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>  
+  </head>
+  
+  <body>  
+    <a-scene renderer="colorManagement: true;"> 
+      <a-gltf-model src="url/to/3d-model.glb"></a-gltf-model>
+    </a-scene>
+  </body>
+</html>
 ```
 
-Note: This might not work in the latest versions of A-Frame since aframe-extras are build additionally. We might need to adjust the versions of both scripts in the URL to match compatible versions as seen in the example above. Check compatibility here: https://github.com/c-frame/aframe-extras#usage-scripts
+sample: https://friendly-luminous-runner.glitch.me/
 
 ---
 
-## Performance
+## Using animations
 
-Scenes, that are build in Modeling and texturing tools such as Blender, will need to be optimized to be viewed realtime and on the web.
+glTF models can have animations on objects. If you want to use these animations, you can use the animation-mixer component from the additional [aframe-extras](https://github.com/donmccurdy/aframe-extras). This second script adds functionality on top of A-Frame.
 
-Always keep an eye on 
+Place the additional link `<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>` into the head of your code and add `animation-mixer` as attribute to your desired object. By default all animations are played in a loop.
 
-- Material Count
-- VRAM Usage
-- Light Count
+The code of your scene could look like this:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>  
+	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  
+  <body>  
+    <a-scene renderer="colorManagement: true;"> 
+      <a-gltf-model src="url/to/animated-model.glb" animation-mixer></a-gltf-model>
+    </a-scene>
+  </body>
+</html>
+```
+
+sample: https://shelled-platinum-recorder.glitch.me/
+
+---
+
+> Additional general note: The functionality of additional scripts is often dependend on their respective version. Ongoing developement sometimes can break compatibility. If you use such scripts, you should check their compatibility with A-Frame on their project site. For aframe-extras this will be here: https://github.com/c-frame/aframe-extras#usage-scripts (The animation-mixer still works together with higher a-frame versions, even though it says there was no compatibility.)
+
+---
+
+# 4 Blender for A-Frame
+
+We can build scenes in Blender and export them to be used with A-Frame.
+
+You can use Materials and keyframe animation on objects to be included in the export for A-Frame.
+
+**Performance**
+
+When building our scene we need to keep in mind, that A-Frame runs on the web and will be accessed on a variety of different devices.
+
+To get a good performance across multiple devices we'll need to think about these things from the very beginning:
+
 - Polycount
-- File Size
+- Textures
+- Materials
+- Lights
+- Export
 
-Checking the scene statistics will help you to create optimized scenes.
+## Geometries and Polycount
 
-**Blender Scene Statistics**: Right-klick on the Version number in the lower right corner -> Scene Statistics
+**Geometries**
 
-**A-Frame Scene Statistics**: Add stats to the a-scene-element: 
+A-Frame works with meshes only.  
+If you use Curves, Nurbs, Metaballs or Texts in Blender you'll need to convert these into meshes. Remember to set their resolution in the *Object Data Properties* (Green Tab) before converting them. Convert using `RMB -> Convert to -> Mesh`
 
-```html
-<a-scene stats></a-scene>
-```
+Modifiers will be applied on export. You can also manually apply these.
 
-https://aframe.io/docs/1.4.0/components/stats.html
+**Polycount**
 
----
+The amount of Triangles displayed is important. It is recommended to use no more than 50,000 triangles for mobile devices.
 
-## Practice: Prepare in Blender
+This is a soft limit though and most modern devices will support more. It is still advisable to keep the polycount as low as possible for best performance and compatibility.
 
-- Build a simple scene in Blender with Textures and Animations.
-- Check this tutorial on how to optimize your scene https://hubs.mozilla.com/labs/how-to-optimize-your-scenes/
-- Export your Scene to GLTF/GLB and load into A-Frame
+To check your scenes' polycount you can activate the scene statistics in Blender in the status bar: on the lower right corner use `RMB` on the version number an activate the *scene statistics*.
 
+## Textures
+
+Textures will cover a large amount of your file size and will need Video Memory (VRAM) to have them loaded.
+
+For best performance you should use JPG or PNG files with low resolution like *1K* or *2K*, e.g. when downloading from [Polyhaven](https://polyhaven.com/textures).
+
+You can optimize your files by recompressing them using some image processing application:
+
+- Use JPGs for photographic images with much detail at about 70 % quality (medium).
+- Use PNGs for graphical images with few unique colors or if you need alpha-transparency.
+
+**Detailed Information**
+
+When you prepare your textures from ressources or paint them inside Blender, use or adjust the images to have both dimensions as a power of 2 for efficient RAM usage.: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096 ... are valid dimensions.
+
+Typical textures are square sized like 512 x 512 px, 1024 x 1024 px (*1K*) and 2048 x 2048 px (*2K*), but you can also use different sizes for each dimension. It is recommended not to use textures larger than 2048 x 2048 px.
+
+It is recommend that textures use no more than 256MB of video RAM for mobile devices. You can check your Video Memory in Blender on the status bar: on the lower right corner use `RMB` on the version number an activate the *video memory*.
+
+## Materials
+
+It is recommended to using no more than 25 unique materials in your scene to reduce draw calls on mobile devices.
+
+## Lights
+
+It is recommended to use no more than 3 lights in your scene (excluding ambient and hemisphere lights) for your scene to run on Iow end PCs.
+
+Dynamic (realtime) lights are not enabled on mobile devices and if you want to use shadows they'll add performance overhead. Therefor it is better not to use dynamic lights at all but to bake lights and shadows into lightmaps. This is a common technique but quite advanced usage.
+
+> You might skip using lights for the moment and I'll add tutorials on this later.
+
+## Export
+
+Export your scene using the glTF-exporter from the main menu `File -> Export -> glTF 2.0 (.glb/.gltf)`
+
+The default export-settings will include the full scene and embed textures as they were linked.
+
+Only if your workflow makes it necessary or useful, you can
+
+- toggle to *include* only some selected or visible objects
+- Choose to convert linked textures to JPG under *Geometry -> Material -> Images: JPEG Format*
+
+
+**file size**
+
+After export, check the file size. It is recommended to use a final file size of no more than 16MB for Iow bandwidth connections. Reducing the file size will reduce the time it takes to download your scene. This is a soft limit and depends on your or your expected visitors' patience to wait until the scene has loaded.
+
+**load into A-Frame**
+
+You can load your Scene as 3D-Model into your A-Frame Project. See respective chapter on this.
