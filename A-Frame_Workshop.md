@@ -562,25 +562,38 @@ You can load your Scene as 3D-Model into your A-Frame Project. See respective ch
 A NavMesh is a 3D object that controls the movement space and is mostly invisible in the scene itself.
 
 ![navmesh](https://miro.medium.com/max/1400/1*OJw2fwEjIPzQ6k0Faa0IhQ.png)
-<!--- https://medium.com/@donmccurdy/creating-a-nav-mesh-for-a-webvr-scene-b3fdb6bed918 --->
 
 ---
 
 ## creating navmesh
 
-You can create navmeshes in Blender out of a plane. Extrude and transform the edgs so that the mesh covers the desired area.
+You can create navmeshes in Blender out of a plane. Extrude and transform the edges so that the mesh covers the desired area on top of your scene objects. You can go up and down with this mesh, but keep it without any volume. 
 
-You can go up and down with this mesh, but keep it without any volume. Note that the standard camera in A-Frame is at the world origin at a height of 1.6 m. Start your navmesh from there, or change the position of the camera (see code below).
+![navmesh.png](navmesh.png)
 
-Export the navmesh and the scene as individual files. In the export dialogue, check *include -> selected objects*, to selectivly export individual meshes.
+---
+
+Note that the standard camera in A-Frame is at the world origin at a height of 1.6 m. Start your navmesh from there, or change the position of the camera (see code below).
+
+![navmesh_camera.png](navmesh_camera.png)
+
+---
+
+Select the navmesh and export it. In the export dialogue, check *include -> selected objects*, to selectivly export individual meshes.
+
+![navmesh_export.png](navmesh_export.png)
+
+---
+
+Hide the navmesh or select the other scene object and export it as another file setting the correct include settings in the export dialogue.
 
 ---
 
 ## navmesh in A-Frame
 
-navmeshes works with using the [aframe-extras](https://github.com/donmccurdy/aframe-extras) (the same that you use for enabling animations in glTF models).
+Navmeshes works with the [aframe-extras](https://github.com/donmccurdy/aframe-extras) (the same that you used for enabling animations in glTF models).
 
-navmesh will only work until A-Frame version 1.1.0 -> set this right in the URL to the script in the head.
+navmesh will only work until A-Frame version 1.1.0 -> set the correct version in the URL to the script in the head.
 
 A camera needs to be set into the scene and put into a rig. To reposition the camera, adjust the position attribute of the rig.
 
