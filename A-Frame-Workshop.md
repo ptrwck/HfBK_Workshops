@@ -1,8 +1,8 @@
 <!--
 author:   Peter Wackernagel, Hochschule für Bildende Künste Dresden
 email:    wackernagel@hfbk-dresden.de
-version:  0.0.6
-logo:     A-Frame_logo.png
+version:  0.0.7
+logo:     A-Frame-logo.png
 language: en
 narrator: English Female
 comment:  Digital spaces in VR with A-Frame
@@ -23,7 +23,7 @@ date:     19/12/2023
 
 Sample applications on the A-Frame home page: [https://aframe.io/](https://aframe.io/)
 
-![Screenshot](AFrame_Website.png)
+![Screenshot](AFrame-Website.png)
 
 Navigation in the scenes is done
 
@@ -38,7 +38,7 @@ More examples: [glitch.com/webxr](https://glitch.com/webxr)
 
 ## HTML-Code
 
-![Screenshot Starter Template Code](AFrame_Starter-Template-Source.png)
+![Screenshot Starter Template Code](AFrame-Starter-Template-Source.png)
 
 - HTML (Hyper Text markup Language) is the language used to describe web pages.
 - A-Frame uses this language to describe the objects of the scene
@@ -575,13 +575,13 @@ You can create navmeshes in Blender out of a plane. Extrude and transform the ed
 
 Note that the standard camera in A-Frame is at the world origin at a height of 1.6 m. Start your navmesh from there, or change the position of the camera (see code below).
 
-![navmesh_camera.png](navmesh_camera.png)
+![navmesh-camera.png](navmesh-camera.png)
 
 ---
 
 Select the navmesh and export it. In the export dialogue, check *include -> selected objects*, to selectivly export individual meshes.
 
-![navmesh_export.png](navmesh_export.png)
+![navmesh-export.png](navmesh-export.png)
 
 ---
 
