@@ -554,3 +554,67 @@ After export, check the file size. It is recommended to use a final file size of
 **load into A-Frame**
 
 You can load your Scene as 3D-Model into your A-Frame Project. See respective chapter on this.
+
+---
+
+# 5 Movement control
+
+A NavMesh is a 3D object that controls the movement space and is mostly invisible in the scene itself.
+
+![navmesh](https://miro.medium.com/max/1400/1*OJw2fwEjIPzQ6k0Faa0IhQ.png)
+<!--- https://medium.com/@donmccurdy/creating-a-nav-mesh-for-a-webvr-scene-b3fdb6bed918 --->
+
+---
+
+## creating navmesh
+
+You can create navmeshes in Blender out of a plane. Extrude and transform the edgs so that the mesh covers the desired area.
+
+You can go up and down with this mesh, but keep it without any volume. Note that the standard camera in A-Frame is at the world origin at a height of 1.6 m. Start your navmesh from there, or change the position of the camera (see code below).
+
+Export the navmesh and the scene as individual files. In the export dialogue, check *include -> selected objects*, to selectivly export individual meshes.
+
+---
+
+## navmesh in A-Frame
+
+navmeshes works with using the [aframe-extras](https://github.com/donmccurdy/aframe-extras) (the same that you use for enabling animations in glTF models).
+
+navmesh will only work until A-Frame version 1.1.0 -> set this right in the URL to the script in the head.
+
+A camera needs to be set into the scene and put into a rig. To reposition the camera, adjust the position attribute of the rig.
+
+You can copy the following code and adjust the source files too your needs.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  
+  <body>
+  
+    <a-scene renderer="colorManagement: true;">
+    <!-- scene -->
+  	<a-entity gltf-model="url/to/scene.glb"></a-entity>
+    <!-- navmesh -->
+	  <a-entity gltf-model="url/to/navmesh.glb" nav-mesh visible="false"></a-entity>
+
+    <!-- camera -->
+    <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true" position="0 0 0">
+      	<a-entity camera position="0 1.6 0" look-controls></a-entity>
+    </a-entity>
+
+   <!-- Sky optional -->
+    <a-sky color="#ECECEC"></a-sky>
+      
+    </a-scene>
+  </body>
+</html>
+```
+
+---
+
+sample: https://holistic-brook-vulcanodon.glitch.me/
