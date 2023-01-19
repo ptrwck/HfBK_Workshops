@@ -602,29 +602,29 @@ You can copy the following code and adjust the source files too your needs.
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-  </head>
-  
-  <body>
-  
-    <a-scene renderer="colorManagement: true;">
-    <!-- scene -->
-  	<a-entity gltf-model="url/to/scene.glb"></a-entity>
-    <!-- navmesh -->
-	  <a-entity gltf-model="url/to/navmesh.glb" nav-mesh visible="false"></a-entity>
-
-    <!-- camera -->
-    <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true" position="0 0 0">
-      	<a-entity camera position="0 1.6 0" look-controls></a-entity>
-    </a-entity>
-
-   <!-- Sky optional -->
-    <a-sky color="#ECECEC"></a-sky>
+<head>
+	<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+	<a-scene renderer="colorManagement: true;">
+	
+	<!-- scene -->
+		<a-entity gltf-model="url/to/scene.glb"></a-entity>
+	
+	<!-- navmesh -->
+		<a-entity gltf-model="url/to/navmesh.glb" nav-mesh visible="false"></a-entity>
+	
+	<!-- camera -->
+		<a-entity movement-controls="speed: 0.15; constrainToNavMesh: true" position="0 0 0">
+			<a-entity camera position="0 1.6 0" look-controls></a-entity>
+		</a-entity>
+	
+	<!-- Sky optional -->
+	    <a-sky color="#ECECEC"></a-sky>
       
-    </a-scene>
-  </body>
+	</a-scene>
+</body>
 </html>
 ```
 
