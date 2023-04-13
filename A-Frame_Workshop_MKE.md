@@ -7,7 +7,7 @@ language: en
 narrator: English Female
 comment:  Introduction into A-Frame at MKE
 mode:     textbook
-dark:     false
+dark:     true
 date:     15/4/2023
 @classroom: disable
 @sharing: false
