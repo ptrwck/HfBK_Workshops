@@ -355,7 +355,7 @@ Files must be uploaded to the Assets folder.
 
 ---
 
-### `<a-image>`
+**`<a-image>`**
 
 The image primitive shows an image on a flat plane.
 
@@ -370,7 +370,7 @@ The image primitive shows an image on a flat plane.
  
 ---
 
-### `<a-sky>` 
+**`<a-sky>`** (background image)
 
 The sky primitive adds a background color or 360° image to a scene. A sky is a large sphere with a color or texture mapped to the inside.
 
@@ -385,7 +385,7 @@ You can download Sky-Images here: https://polyhaven.com/hdris
 
 ---
 
-### `<a-gltf-model>`
+**`<a-gltf-model>`** (3D object)
 
 To use 3D-Models in A-Frame it is recommended to use the glTF Format. Even though it is possible to use other formats, glTF models work with A-Frame more reliably than other formats.
 
