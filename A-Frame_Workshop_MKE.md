@@ -320,7 +320,7 @@ When moving or rotating the camera relative to the scene, use a camera rig. By d
 
 ---
 
-## Group elements
+**Group elements**
 
 Entities can be used to group objects. This allows several objects to be positioned together, e.g.:
 
