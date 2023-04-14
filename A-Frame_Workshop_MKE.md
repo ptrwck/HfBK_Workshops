@@ -214,7 +214,11 @@ To keep things simple, primitives will be used in most cases in this course.
 
 ## Built-in elements
 
-### `<a-plane>`
+These built-in primitives are ready for use in your scene. You can copy the code to get started with an element and add attributes like *position*, *rotation* and *scale* as you like.
+
+---
+
+**`<a-plane>`**
 
 The plane primitive creates flat surfaces.
 
@@ -226,7 +230,7 @@ The plane primitive creates flat surfaces.
 
 ---
 
-### `<a-box>`
+**`<a-box>`**
 
 The box primitive creates shapes such as boxes, cubes, or walls.
 
@@ -238,7 +242,7 @@ The box primitive creates shapes such as boxes, cubes, or walls.
 
 ---
 
-### `<a-cylinder>`
+**`<a-cylinder>`**
 
 The cylinder primitive is used to create tubes and curved surfaces.
 
@@ -248,7 +252,7 @@ The cylinder primitive is used to create tubes and curved surfaces.
 
 ---
 
-### `<a-sphere>`
+**`<a-sphere>`**
 
 The sphere primitive creates a spherical or polyhedron shapes.
 
@@ -258,7 +262,7 @@ The sphere primitive creates a spherical or polyhedron shapes.
 
 ---
 
-### `<a-ring>`
+**`<a-ring>`**
 
 The ring primitive creates a ring or disc shape.
 
@@ -268,7 +272,7 @@ The ring primitive creates a ring or disc shape.
 
 ---
 
-### `<a-torus>`
+**`<a-torus>`**
 
 The torus primitive creates donut or tube shapes.
 
@@ -278,7 +282,7 @@ The torus primitive creates donut or tube shapes.
 
 ---
 
-### `<a-text>`
+**`<a-text>`**
 
 Adds a text.
 
@@ -288,7 +292,7 @@ Adds a text.
 
 ---
 
-### `<a-sky>`
+**`<a-sky>`**
 
 The sky primitive adds a background color to a scene.
 
@@ -298,7 +302,7 @@ The sky primitive adds a background color to a scene.
 
 ---
 
-### `<a-camera>`
+**`<a-camera>`**
 
 Unless explicitly written into the markup, a camera is by default placed at the average height of a human eye (1.6 meters). When used with controls that receive rotation or position (e.g., from a VR device), this position is overridden. Change the Height value to set it to a different height. To change the start position, see below.
 
