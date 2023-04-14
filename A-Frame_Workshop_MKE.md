@@ -367,8 +367,9 @@ The image primitive shows an image on a flat plane.
 - Check the (pixel) size of your images. 2K is usually enough, depending on the distance you want visitors to see them in your project.
 - Optimize your images for the web using the web export of your favorite application. You can also edit your images online with [Photopea](https://www.photopea.com/).
 - In the A-Frame element, set the width and height, preserving the original aspect ratio of the image to avoid distortions. These properties are set in meters, don't confuse them with pixels.
- 
+
 ---
+
 
 **`<a-sky>`** (background image)
 
@@ -422,8 +423,6 @@ If your glTF model uses textures you will need to enable color management in the
 	<!-- scene content -->
 </a-scene>
 ```
-
----
 
 The complete code of your scene loading a glTF file with textures and setting the color management correctly could look like this.
 
