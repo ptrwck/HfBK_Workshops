@@ -14,7 +14,7 @@ date:     15/4/2023
 link: lia-style.css
 -->
 
-# Introduction into A-Frame
+# A-Frame
 
 ![](aframe-home.png)
 
@@ -24,7 +24,7 @@ A-Frame is a web framework for creating 3D/AR/VR experiences based on standard H
 
 ---
 
-## Sample Applications
+## Sample projects
 
 Here are some scenes that students have created over the past few semesters.
 
