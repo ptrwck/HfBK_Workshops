@@ -192,6 +192,8 @@ We'll use the A-Frame Starter-Template on glitch.com: https://glitch.com/~aframe
 
 > Each project gets its unique URL and is immediately online. With this the project can be viewed instantly from around the world.
 
+You can share your project from the workshop at MKE on 14. of April here: https://yopad.eu/p/aframe-mke
+
 ---
 
 # Elements in A-Frame
